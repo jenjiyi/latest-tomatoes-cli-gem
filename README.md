@@ -19,7 +19,7 @@ Or install it yourself as:
 
 ## Usage
 
-    Coming soon.
+    CLI to look up information on latest dvd and streaming releases
 
 ## Development
 
