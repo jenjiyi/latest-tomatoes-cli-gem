@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'latest_tomatoes/version'
+require 'latest_tomatoes_cli_gem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "latest_tomatoes"
+  spec.name          = "latest_tomatoes_cli_gem"
   spec.version       = LatestTomatoes::VERSION
   spec.authors       = ["jenjiyi"]
   spec.email         = ["jennyy@jennyy.com"]
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
-  spec.executables   =  ["latest_tomatoes"]  #spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   =  ["latest_tomatoes_cli_gem"]  #spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
