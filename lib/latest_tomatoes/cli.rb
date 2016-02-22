@@ -18,7 +18,8 @@ class LatestTomatoes::CLI
     @movies = LatestTomatoes::Movies.latest
 
     @movies.each.with_index(1) do |movie, index|
-      puts "#{index}. #{movie[:title]} - #{movie[:tomatoScore]}%"
+      movie[:tomatoScore] != nil ? tmeter = "#{movie[:tomatoScore]}%\n" : tmeter = "N/A"
+      puts "#{index}. #{movie[:title]} - #{tmeter}"  
     end
   end
 
@@ -30,10 +31,10 @@ class LatestTomatoes::CLI
       DOC
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i < 31 # not an integer
-        
+          @movies[input.to_i-1][:tomatoScore] != nil ? tmeter = "#{@movies[input.to_i-1][:tomatoScore]}%" : tmeter = "N/A"
           puts <<-DOC.gsub /^\s+/, ""
           -------------
-          #{@movies[input.to_i-1][:title]} - tomato meter: #{@movies[input.to_i-1][:tomatoScore]}%
+          #{@movies[input.to_i-1][:title]} - tomato meter: #{tmeter}
           Actors: #{@movies[input.to_i-1][:actors].join(", ")}
           MPAA: #{@movies[input.to_i-1][:mpaaRating]}
           #{@movies[input.to_i-1][:synopsis]}
