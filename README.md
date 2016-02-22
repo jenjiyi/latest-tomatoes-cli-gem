@@ -17,9 +17,6 @@ Or install it yourself as:
 
     $ gem install latest-tomatoes-cli-gem
 
-## Usage
-
-    CLI to look up information on latest dvd and streaming releases
 
 ## Development
 
